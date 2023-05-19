@@ -14,9 +14,12 @@ async function main() {
         ({
             "id": 3,
             "title": "The Legends of Arathrae",
-        })
+            "quantity": bookData
+        })        
     })
 }
+
+
 
 function renderBook(book) {
     let bookContainer = document.querySelector('.book-container')
