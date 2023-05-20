@@ -3,10 +3,10 @@ async function main() {
     let response = await fetch('http://localhost:3001/listBooks')
     let books = await response.json()
 
-    books.forEach(renderBook)
+    //books.forEach(renderBook)
 
     fetch('http://localhost:3001/updateBook', {
-        method: 'PATCH',
+        method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
         },
@@ -14,11 +14,14 @@ async function main() {
         ({
             "id": 3,
             "title": "The Legends of Arathrae",
-            "quantity": bk3
+            "quantity": 9
         })        
     })
 }
-let bk3 = document.querySelector('#book3')
+//let bk3 = document.querySelector('#book3')
+
+
+
 
 function renderBook(book) {
     let bookContainer = document.querySelector('.book-container')
@@ -31,7 +34,7 @@ function renderBook(book) {
                 : ``}
                 <div class="card-body">
                     <h5 class="card-title">${book.title}</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Available: ${bk3.InnerHtml}</h6>
+                    <h6 class="card-subtitle mb-2 text-muted">Available: ${book.quantity}</h6>
                     <p class="card-text">${book.description}</p>
                 </div>
             </div>
