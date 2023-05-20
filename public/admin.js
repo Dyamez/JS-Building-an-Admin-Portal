@@ -1,14 +1,3 @@
-
-// Your Code Here
-
-let formBk = document.querySelector('#book3');
-formBk.addEventListener('save', event => {
-    event.preventDefault();
-
-    let bookData = new BookData(formBk);
-    bookData.append(`${book.quantity}`)
-})
-
 async function main() {
 
     let response = await fetch('http://localhost:3001/listBooks')
@@ -25,10 +14,11 @@ async function main() {
         ({
             "id": 3,
             "title": "The Legends of Arathrae",
-            "quantity": bookData
-        })
+            "quantity": bk3
+        })        
     })
 }
+let bk3 = document.querySelector('#book3')
 
 function renderBook(book) {
     let bookContainer = document.querySelector('.book-container')
@@ -41,7 +31,7 @@ function renderBook(book) {
                 : ``}
                 <div class="card-body">
                     <h5 class="card-title">${book.title}</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Available: ${book.quantity}</h6>
+                    <h6 class="card-subtitle mb-2 text-muted">Available: ${bk3.InnerHtml}</h6>
                     <p class="card-text">${book.description}</p>
                 </div>
             </div>
