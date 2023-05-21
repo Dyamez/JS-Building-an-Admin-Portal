@@ -3,7 +3,7 @@ async function main() {
     let response = await fetch('http://localhost:3001/listBooks')
     let books = await response.json()
 
-    //books.forEach(renderBook)
+    books.forEach(renderBook)
 
     fetch('http://localhost:3001/updateBook', {
         method: 'PUT',
@@ -14,11 +14,11 @@ async function main() {
         ({
             "id": 3,
             "title": "The Legends of Arathrae",
-            "quantity": 9
+            "quantity": bk3
         })        
     })
 }
-//let bk3 = document.querySelector('#book3')
+let bk3 = document.querySelector('#book3')
 
 
 
