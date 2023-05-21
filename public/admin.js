@@ -14,7 +14,7 @@ async function main() {
         ({
             "id": 3,
             "title": "The Legends of Arathrae",
-            "quantity": bk3
+            "quantity": 9
         })        
     })
 }
